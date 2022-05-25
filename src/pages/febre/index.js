@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react"
 
 export default function Index(){
-    const [temp, settemp] = useState(0);
+    const [temp, settemp] = useState();
     const [resp,setresp] = useState('');
 
     async function febre(){

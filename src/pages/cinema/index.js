@@ -2,11 +2,11 @@ import axios from "axios";
 import { useState } from "react"
 
 export default function Index(){
-    const [inteiras, setinteiras] = useState(0);
-    const [meias, setmeias] = useState(0);
+    const [inteiras, setinteiras] = useState();
+    const [meias, setmeias] = useState();
     const [nacionalidade, setnacionalidade] = useState('');
     const [dia, setdia] = useState('');
-    const [resp, setresp] = useState(0);
+    const [resp, setresp] = useState();
 
     async function calcular(){
         const resp = await axios.post('http://localhost:5000/cinema/', 
