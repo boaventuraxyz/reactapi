@@ -11,8 +11,8 @@ export default function Index(){
         setnumero('');
     }
     async function maior(){
-        const resp = await axios.post('http://localhost:5000/maior/' , numeros);
-        setresp(resp.data.maior);
+        const resp = await axios.post('http://localhost:5000/maior' , numeros);
+        setresp(resp.data.maior)
     }
 
     return(

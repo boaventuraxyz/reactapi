@@ -6,7 +6,7 @@ export default function Index(){
     const [resp,setresp] = useState('');
 
     async function febre(){
-        const resp = await axios.get('http://localhost:5000/febre/' + temp);
+        const resp = await axios.get('http://localhost:5000/febre?g=' + temp);
         if (resp.data.febre === true) {
             setresp('SIM');
         }
