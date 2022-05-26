@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-
+import '../cinema/index.scss'
 export default function Index(){
     const[txt, settxt] = useState('')
     const[c, setc] = useState('')
@@ -12,12 +12,15 @@ export default function Index(){
     }
     return(
         <main>
-            <h1>Frequencia</h1>
-            texto <input type='text' value={txt} onChange= {e => settxt(e.target.value)}   />
-            caracter <input type='text' value={c} onChange= {e => setc(e.target.value)} />
-            <button onClick={freq}>consultar</button>
-            
-            Frequencia: {resp}
+            <h1>Frequência</h1>
+           <div className="text"> Texto</div> <input type='text' value={txt} onChange= {e => settxt(e.target.value)}   />
+            <div className="text">Caracter </div><input type='text' value={c} onChange= {e => setc(e.target.value)} />
+            <div>
+            <button className="botao" onClick={freq}>Consultar</button>
+            </div>
+            <h1>
+            Frequência: {resp}
+            </h1>
 
         </main>
     )

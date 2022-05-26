@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-
+import '../cinema/index.scss'
 export default function Index(){
     const[numeros, setnumeros] = useState([]);
     const[numero, setnumero] = useState();
@@ -18,17 +18,17 @@ export default function Index(){
     return(
         <main>
             <h1>Maior</h1>
-            <div>
-                Numero: <input type='text' value={numero} onChange= {e => setnumero(Number(e.target.value))} /> <button onClick={adc}>adc numero</button>
-            </div>
-            <div>
+            <div className="text">
+                Número: </div><input type='text' value={numero} onChange= {e => setnumero(Number(e.target.value))} /> <button className="botao" onClick={adc}>Adicionar Número</button>
+            
+            <div className="text">
                 {numeros.map(item => <div>{item}</div>)}
             </div>
             <div>
-                <button onClick={maior} >verificar</button>
-
-                o maior numero é: {respostas}
-            </div>
+                <button className="botao" onClick={maior} >Verificar</button>
+                </div>
+                <h1>O maior número é: {respostas}</h1>
+           
         </main>
     )
 }

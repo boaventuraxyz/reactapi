@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-
+import '../cinema/index.scss'
 export default function Index(){
     const [n1,setn1] = useState()
     const [n2,setn2] = useState()
@@ -17,13 +17,15 @@ export default function Index(){
     }
     return(
         <main>
-            <h1>media</h1>
-            <div>   nota 1: <input type='text' value={n1} onChange={e => setn1(Number(e.target.value))} /> </div>
-            <div> nota 2: <input type='text' value={n2} onChange={e => setn2(Number(e.target.value))} /> </div>
-            <div>note 3: <input type='text' value={n3} onChange={e => setn3(Number(e.target.value))} /></div>
+            <h1>Média</h1>
+            <div className="text">   Nota 1 </div><input type='text' value={n1} onChange={e => setn1(Number(e.target.value))} /> 
+            <div className="text"> Nota 2  </div><input type='text' value={n2} onChange={e => setn2(Number(e.target.value))} /> 
+            <div className="text">Nota 3 </div><input type='text' value={n3} onChange={e => setn3(Number(e.target.value))} />
 
-            <button onClick={media}>calcular media</button>
-            a media é de {resp}
+            <div>
+            <button className="botao" onClick={media}>Calcular média</button>
+            </div>
+            <h1>A media é de {resp}</h1>
         </main>
     )
 }

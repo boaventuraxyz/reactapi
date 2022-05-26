@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-
+import '../cinema/index.scss'
 export default function Index(){
     const [cor, setcor ] = useState('');
     const [resposta, setResposta] = useState('');
@@ -8,23 +8,23 @@ export default function Index(){
     async function verificarCor(){
         const resp = await axios.get('http://localhost:5000/primaria/' + cor);
         if (resp.data.primaria === true){
-            setResposta('SIM');
+            setResposta(' SIM!');
         }
         else {
-            setResposta("NAO");
+            setResposta(" NÃO!");
         }
     }
     return(
         <main>
-            <h1>Cor Primaria</h1>
+            <h1>Cor Primária</h1>
+            <div className="text">
+                Cor </div><input type='text' value={cor} onChange={e => setcor(e.target.value)} />
+            
             <div>
-                Cor: <input type='text' value={cor} onChange={e => setcor(e.target.value)} />
+                <button className="botao" onClick={verificarCor}>Verificar</button>
             </div>
             <div>
-                <button onClick={verificarCor}>verificar</button>
-            </div>
-            <div>
-                é cor primaria?{resposta}
+                <h1>É cor primária?{resposta}</h1>
             </div>
         </main>
     )

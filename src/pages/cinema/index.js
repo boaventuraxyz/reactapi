@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react"
+import './index.scss';
 
 export default function Index(){
     const [inteiras, setinteiras] = useState();
@@ -20,14 +21,17 @@ export default function Index(){
         setresp(resp.data.cinema);
     }
     return(
-        <main>
+        <main className="tudo">
             <h1>Cinema</h1>
-            Qtd. de inteira <input type='text' value={inteiras} onChange={ e => setinteiras(Number(e.target.value))} /> 
-            Qtd. de Meias <input type='text'  value={meias} onChange= {e => setmeias(Number(e.target.value))} /> 
-            Nacionalidade <input type='text' placeholder="brasileiro ou estrangeiro?" value={nacionalidade} onChange={ e => setnacionalidade(e.target.value)}  />
-            Dia da Semana <input type='text' value={dia} onChange={ e => setdia(e.target.value)} />
-            <button onClick={calcular} >calcular</button>
-            o total é de R${resp}
+
+            <div className="text">Qtd. de inteira </div> <input type='text' value={inteiras} onChange={ e => setinteiras(Number(e.target.value))} />
+            <div className="text">Qtd. de Meias</div> <input type='text'  value={meias} onChange= {e => setmeias(Number(e.target.value))} /> 
+            <div className="text">Nacionalidade </div><input type='text' placeholder="Brasileiro ou estrangeiro?" value={nacionalidade} onChange={ e => setnacionalidade(e.target.value)}  />
+            <div className="text">Dia da Semana </div><input type='text' value={dia} onChange={ e => setdia(e.target.value)} />
+            <div >
+            <button  className="botao" onClick={calcular} >Calcular</button>
+            </div>
+            <h1 className="total">O total é de R${resp}</h1>
         </main>
     )
 }

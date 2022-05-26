@@ -1,20 +1,21 @@
+import './index.scss';
 import { Link } from "react-router-dom";
-
+import './index.scss'
 export default function Index(){
     return(
-        <main>
-            <h1>home</h1>
+        <main className="tudo">
+            <h1 class="homepg">Home</h1>
 
-            <ul>
-                <li><Link to='/cinema'>cinema</Link></li>
-                <li><Link to='/dobro'>dobro</Link></li>
-                <li><Link to='/febre'>febre</Link></li>
-                <li><Link to='/freq'>freq</Link></li>
-                <li><Link to='/maior'>maior</Link></li>
-                <li><Link to='/media'>media</Link></li>
-                <li><Link to='/primaria'>cor primaria</Link></li>
-                <li><Link to='/soma'>soma</Link></li>
-                <li><Link to='/tabuada'>tabuada</Link></li>
+            <ul class="tabelinha">
+                <li ><Link to='/cinema'  class="tabelinha">CINEMA</Link></li>
+                <li><Link to='/dobro'    class="tabelinha">DOBRO</Link></li>
+                <li><Link to='/febre'    class="tabelinha">FEBRE</Link></li>
+                <li><Link to='/freq'     class="tabelinha">FREQ</Link></li>
+                <li><Link to='/maior'    class="tabelinha">MAIOR</Link></li>
+                <li><Link to='/media'    class="tabelinha">MEDIA</Link></li>
+                <li><Link to='/primaria' class="tabelinha">COR PRIMARIA</Link></li>
+                <li><Link to='/soma'     class="tabelinha">SOMA</Link></li>
+                <li><Link to='/tabuada'  class="tabelinha">TABUADA</Link></li>
             </ul>
         </main>
     )

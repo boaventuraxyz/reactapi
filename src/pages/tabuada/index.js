@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from "axios";
-
+import '../cinema/index.scss'
 export default function Index(){
     const[n, setn] = useState();
     const[resposta, setresp] = useState([]);
@@ -13,12 +13,12 @@ export default function Index(){
     }
     return(
         <main>
-            <h1>tabuada</h1>
-            numero: <input type='text' value={n} onChange={e => setn(Number(e.target.value))} />
+            <h1>Tabuada</h1>
+            <div className="text">Número: </div> <input type='text' value={n} onChange={e => setn(Number(e.target.value))} />
             <div>
-            <button onClick={calcular}> calcular</button>
+            <button className="botao" onClick={calcular}> Calcular</button>
             </div>
-            <div> {resposta + ''} </div>
+            <div className="text"> {resposta + ''} </div>
         </main>
     )
 }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react"
+import '../cinema/index.scss'
 
 export default function Index(){
     const [n, setn] = useState(0);
@@ -10,11 +11,16 @@ export default function Index(){
         setresp(resp.data.dobro)
     }
     return(
-        <main>
-            <h1>dobro</h1>
-            numero <input type='text' value={n} onChange={ e => setn(Number(e.target.value))} />
-            <button onClick={calcular} >calcular</button>
-            o dobro é {resposta}
+        <main className="tudo">
+            <h1>Dobro</h1>
+            <div class="text">
+            Número </div><input type='text' value={n} onChange={ e => setn(Number(e.target.value))} />
+            <div>
+            <button className="botao" onClick={calcular} >Calcular</button>
+            </div>
+            <div>
+            <h1>O dobro é {resposta}</h1>
+            </div>
         </main>
     )
 }

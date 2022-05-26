@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react"
+import '../cinema/index.scss'
 
 export default function Index(){
     const [temp, setTemp] = useState('');
@@ -17,14 +18,15 @@ export default function Index(){
     return(
         <main>
             <h1>Febre</h1>
-            Temperatura: <input type='text' value={temp} onChange={e => setTemp(Number(e.target.value))} />
+            <div className="text">
+            Temperatura </div><input type='text' value={temp} onChange={e => setTemp(Number(e.target.value))} />
 
             <div>
-            <button onClick={verificarFebre}>Consultar</button>
+            <button className="botao" onClick={verificarFebre}>Consultar</button>
             </div>
 
             <div>
-            Estou com febre? {resposta}
+            <h1>Estou com febre? {resposta}</h1>
             </div>
         </main>
     )
