@@ -8,7 +8,7 @@ export default function Index(){
 
 
     async function calcular(){
-        const resp = await axios.get('http://localhost:5000/tabuada' + n)
+        const resp = await axios.post('http://localhost:5000/tabuada?')
         setresp(resp.data.tabuada)
     }
     return(

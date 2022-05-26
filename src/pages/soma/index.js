@@ -4,11 +4,15 @@ import { useState } from "react"
 export default function Index(){
     const [numero, setnumero] = useState();
     const [numero2, setnumero2] = useState();
-    const [resposta, setresposta] = useState('');
+    const [resposta, setresposta] = useState();
 
     async function somar(){
-        const resp = await axios.get('http://localhost:5000/soma/' + numero + numero2);
-        setresposta(resp.data.soma);
+        const resp = await axios.post('http://localhost:5000/soma' , 
+        {
+            n1 : numero,
+            n2 : numero2
+        })
+        setresposta(resp.data.soma)
     }
     return(
 

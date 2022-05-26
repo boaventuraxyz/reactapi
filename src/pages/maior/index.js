@@ -4,7 +4,7 @@ import { useState } from "react"
 export default function Index(){
     const[numeros, setnumeros] = useState([]);
     const[numero, setnumero] = useState();
-    const[resp, setresp] = useState('');
+    const[respostas, setrespostas] = useState('');
 
      function adc(){
         setnumeros([...numeros, numero])
@@ -12,7 +12,7 @@ export default function Index(){
     }
     async function maior(){
         const resp = await axios.post('http://localhost:5000/maior' , numeros);
-        setresp(resp.data.maior)
+        setrespostas(resp.data.maior)
     }
 
     return(
@@ -27,7 +27,7 @@ export default function Index(){
             <div>
                 <button onClick={maior} >verificar</button>
 
-                o maior numero é: {resp}
+                o maior numero é: {respostas}
             </div>
         </main>
     )
