@@ -18,7 +18,7 @@ export default function Index(){
             <div>
             <button onClick={calcular}> calcular</button>
             </div>
-            {resposta}
+            <div> {resposta + ''} </div>
         </main>
     )
 }
